@@ -47,6 +47,5 @@ class ComPortService(
         climateRepository.findByThermometerPortNameAndCollectorPinNumber(portName, pinNumber).let { climateZone ->
             climateRepository.save(climateZone.apply { currentTemperature = realTemperature })
         }
-
     }
 }

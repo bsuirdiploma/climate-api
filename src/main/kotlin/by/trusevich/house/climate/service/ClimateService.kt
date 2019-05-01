@@ -22,5 +22,4 @@ class ClimateService(private val climateRepository: ClimateRepository, private v
             climateRepository.save(it.apply { requiredTemperature = temperature })
         } ?: throw EntityNotFoundException()
     }
-
 }

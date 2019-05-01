@@ -29,7 +29,6 @@ class PortListener(private val serialPort: SerialPort, private val comPortServic
             } catch (ex: Exception) {
                 log.error("Error in receiving message from COM-port", ex)
             }
-
         }
     }
 
