@@ -11,12 +11,12 @@ import kotlin.annotation.AnnotationTarget.PROPERTY_GETTER
 import kotlin.reflect.KClass
 
 /**
- * Validates, that the climate zone name is unique in database
+ * Validates, that the port entered is valid and available
  */
 @Retention
 @Target(PROPERTY_GETTER, FIELD)
 @MustBeDocumented
-@Constraint(validatedBy = [NameUniqueValidator::class])
+@Constraint(validatedBy = [PortValidator::class])
 annotation class PortValid(
     @Suppress("unused") val message: String = "Port is not available",
     @Suppress("unused") val groups: Array<KClass<*>> = [],

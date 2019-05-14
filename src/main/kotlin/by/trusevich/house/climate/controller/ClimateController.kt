@@ -52,7 +52,7 @@ class ClimateController(private val climateService: ClimateService) {
         ApiResponse(code = SC_BAD_REQUEST, message = MALFORMED_REASON, response = ErrorDetails::class)
     )
     @PostMapping(consumes = [APPLICATION_JSON_UTF8_VALUE], produces = [APPLICATION_JSON_UTF8_VALUE])
-    fun createClimateZone(@Valid @ApiParam(hidden = true) @RequestBody climate: ClimateZone) =
+    fun createClimateZone(@Valid @RequestBody climate: ClimateZone) =
         climateService.create(climate)
 
     @TokenHeaderImplicit

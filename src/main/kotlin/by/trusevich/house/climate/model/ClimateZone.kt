@@ -1,6 +1,7 @@
 package by.trusevich.house.climate.model
 
 import by.trusevich.house.climate.validation.PortValid
+import by.trusevich.house.climate.validation.NameUnique
 import by.trusevich.house.core.model.BaseEntity
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties
 import com.fasterxml.jackson.annotation.JsonInclude
@@ -25,6 +26,7 @@ import javax.validation.constraints.NotNull
 data class ClimateZone(
 
     @get:NotBlank
+    @get:NameUnique
     @get:Length(max = 255)
     @Column(nullable = false, updatable = false)
     var name: String? = null,
